@@ -22,6 +22,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '12.0'
     s.tvos.deployment_target = '12.0'
     s.osx.deployment_target = '10.11'
+    s.visionos.deployment_target = '1.0'
 
     s.ios.frameworks = 'Security', 'SystemConfiguration', 'CoreTelephony'
     s.osx.frameworks  = 'Security'
@@ -33,6 +34,8 @@ Pod::Spec.new do |s|
        ss.tvos.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
 
        ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+
+       ss.visionos.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
     end
 
     s.subspec 'Legacy' do |ss|
@@ -45,6 +48,8 @@ Pod::Spec.new do |s|
        ss.tvos.vendored_frameworks = 'binaries/tv/AppsFlyerLib.framework'
 
        ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+
+       ss.visionos.vendored_frameworks = 'binaries/ios/AppsFlyerLib.framework'
   end
   s.subspec 'Strict' do |ss|
        ss.ios.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
@@ -52,6 +57,8 @@ Pod::Spec.new do |s|
        ss.tvos.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
 
        ss.osx.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
+
+       ss.visionos.vendored_frameworks = 'binaries/xcframework/strict/AppsFlyerLib.xcframework'
   end
 
   s.subspec 'Dynamic' do |ss|
@@ -60,5 +67,6 @@ Pod::Spec.new do |s|
        ss.tvos.vendored_frameworks = 'binaries/xcframework/dynamic/AppsFlyerLib.xcframework'
        # Dynamic framework does not support pure OSX yet
        ss.osx.vendored_frameworks = 'binaries/xcframework/full/AppsFlyerLib.xcframework'
+       ss.visionos.vendored_frameworks = 'binaries/xcframework/dynamic/AppsFlyerLib.xcframework'
   end
 end
